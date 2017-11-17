@@ -16,9 +16,6 @@ function Users({dispatch,list:dataSource,loading,total,page:current}) {
   function createHandler(values){
     dispatch({type:'users/create',payload:values})
   }
-  function requestMock(){
-    console.log('requestMock');
-  }
   const columns=[
     {
       title:'Name',
@@ -66,7 +63,6 @@ function Users({dispatch,list:dataSource,loading,total,page:current}) {
             <Button type="primary">Create User</Button>
           </UserModal>
         </div>
-        <Button type="primary" onClick={requestMock}>request mock data</Button>
         <Table
           loading={loading}
           columns={columns}
