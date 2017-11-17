@@ -18,3 +18,7 @@
  export function create(values){
     return request('/api/users',{method:'POST',body:JSON.stringify(values)})
  }
+
+ export function requestMock(){
+   return request('/api/mock',{method:'GET'})
+ }
