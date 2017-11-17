@@ -16,7 +16,7 @@ export default {
     *fetch({payload:{page}},{call,put}){
       const {data,headers}=yield call(userService.fetch,{page})//call:调用异步请求
       yield put({type:'save',payload:{
-        data:data.dataMap.users,
+        data:data,
         total:parseInt(headers['x-total-count'],10),
         page:parseInt(page,10)
       }})//put:调用reducer-save

@@ -9,14 +9,20 @@
    return request(`api/users/${id}`,{method:'DELETE'})
  }
 
- export function patch(id,values){
+ export function patch({id,values}){
   return request(`/api/users/${id}`,{
     method:'PATCH',
-    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body:JSON.stringify(values)})
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body:JSON.stringify(values)
+  })
  }
 
  export function create(values){
-    return request('/api/users',{method:'POST',body:JSON.stringify(values)})
+    return request('/api/users',{
+      method:'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body:JSON.stringify(values)
+    })
  }
 
  export function requestMock(){

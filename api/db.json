@@ -1,10 +1,60 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+  "news": [
+    {
+      "id": 1,
+      "title": "曹县宣布昨日晚间登日成功",
+      "date": "2016-08-12",
+      "likes": 55,
+      "views": 100086
+    },
+    {
+      "id": 2,
+      "title": "长江流域首次发现海豚",
+      "date": "2016-08-12",
+      "likes": 505,
+      "views": 9800
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "news_id": 1,
+      "data": [
+        {
+          "id": 1,
+          "content": "支持党中央决定"
+        },
+        {
+          "id": 2,
+          "content": "抄写党章势在必行！"
+        }
+      ]
+    }
   ],
-  "profile": { "name": "typicode" },
-  "users":[{"name":"echo","email":"1363794619@qq.com","website":"http://www.baidu.com"}]
+  "users": [
+    {
+      "id": 1,
+      "name": "echo",
+      "email": "1363794619@qq.com",
+      "website": "http://www.baidu.com"
+    },
+    {
+      "id": 2,
+      "name": "shuai",
+      "email": "1363793319@qq.com",
+      "website": "http://www.chinaredstar.com"
+    },
+    {
+      "id": 3,
+      "name": "1111",
+      "email": "11",
+      "website": "11111"
+    },
+    {
+      "name": "test",
+      "email": "test",
+      "website": "test",
+      "id": 5
+    }
+  ]
 }

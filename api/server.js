@@ -1,7 +1,7 @@
 const path=require('path')
 const jsonServer = require('json-server')
 const server = jsonServer.create()
-//const router = jsonServer.router(path.join(__dirname, 'db.json'))
+const router = jsonServer.router(path.join(__dirname, 'db.json'))
 const middlewares = jsonServer.defaults()
 const Mocks=require('./mocks')
 
@@ -25,9 +25,9 @@ server.use((req, res, next) => {
 
 // In this example, returned resources will be wrapped in a body property
 
-/*server.use(router)*/
-const mocks=new Mocks()
-mocks.apply(server,jsonServer,path)
+server.use(router)
+/*const mocks=new Mocks()
+mocks.apply(server,jsonServer,path)*/
 
 
 server.listen(3004, () => {
