@@ -2,10 +2,8 @@ const Mock=require('mockjs')
 const Random=Mock.Random
 
 module.exports=function(){
-  const data={users:[],news: []}
+  const data={users:[]}
   const names=[1,2,3,4].map((item)=>Random.cname(item,item+1))
-  var images = [1,2,3].map(x=>Random.image('200x100', Random.color(), Random.word(2,6)));
-
   for(let i=0,len=5;i<len;i++){
     let name=names[Random.integer(1,3)]
     data.users.push({

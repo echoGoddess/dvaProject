@@ -6,7 +6,7 @@
     "build:dll": "roadhog buildDll",
     "lint": "eslint --ext .js src test",
     "precommit": "npm run lint",
-    "api":"node api/server.js -c api/json-server.json"
+    "mock": "json-server api/db.js --port 3003"
   },
   "engines": {
     "install-node": "6.11.1"
