@@ -2,7 +2,8 @@
  import { PAGE_SIZE } from '../constants';
 
  export function fetch({ page }) {
-   return request(`/api/users?_page=${page}&_limit=${PAGE_SIZE}`);
+   let url=`/api/users?_page=${page}&_limit=${PAGE_SIZE}`
+   return request(url);
  }
 
  export function remove(id){

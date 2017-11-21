@@ -1,9 +1,10 @@
 const path=require('path')
 const jsonServer = require('json-server')
 const server = jsonServer.create()
-const router = jsonServer.router(path.join(__dirname, 'db.json'))
+const mock=require(path.join(__dirname, 'db.js'))
+const router = jsonServer.router(mock())
 const middlewares = jsonServer.defaults()
-const Mocks=require('./mocks')
+//const Mocks=require('./mocks')
 
 server.use(middlewares)
 
@@ -15,13 +16,23 @@ server.use(middlewares)
 // You can use the one used by JSON Server
 /*server.use(jsonServer.bodyParser)*/
 server.use((req, res, next) => {
-  res.header('x-total-count', 10)
-  if(res.statusCode===200){
-    next()
-  } else {
-    res.sendStatus(401)
+  if (req.method === 'POST') {
+    req.body.createdAt = Date.now()
   }
+  // Continue to JSON Server router
+  next()
 })
+
+router.render = (req, res) => {
+  if(res.statusCode===200){
+    console.log('request-success')
+    res.jsonp({
+      code:200,
+      dataMap:res.locals.data,
+      message:'success'
+    })
+  }
+}
 
 // In this example, returned resources will be wrapped in a body property
 
@@ -30,6 +41,6 @@ server.use(router)
 mocks.apply(server,jsonServer,path)*/
 
 
-server.listen(3004, () => {
+server.listen(3003, () => {
   console.log('JSON Server is running')
 })
