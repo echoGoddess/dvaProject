@@ -1,4 +1,5 @@
 {
   "/news/:id/show": "/news/:id",
-  "/users":"/users"
+  "/users":"/users",
+  "login/:name/:password":"/users/:name/:password"
 }

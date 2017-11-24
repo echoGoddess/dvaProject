@@ -13,6 +13,7 @@ app.use(createLoading())
 
 
 app.model(require("./models/users"));
+app.model(require('./models/login'))
 
 // 2. Plugins
 // app.use({});

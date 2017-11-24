@@ -5,11 +5,16 @@ export default {
   state: {
     list:[],
     total:null,
-    page:null
+    page:null,
+    login:{}
   },
   reducers: {//接收state和action，并返回新的state
     save(state,{payload:{data:list,total,page}}){
       return {...state,list,total,page}
+    },
+    saveLogin(state,{payload:data}){
+      state.login=data
+      return state.login
     }
   },
   effects: {//处理异步逻辑，调用action,promise,fetch等
@@ -36,6 +41,10 @@ export default {
     *reload(action,{put,select}){
       const page=yield select(state=>state.users.page)
       yield put({type:'fetch',payload:{page}})
+    },
+    *login({payload:params},{call,put}){
+      const {data}=yield call(userService.login,params)
+      yield put({type:'saveLogin',payload:data})
     }
   },
   subscriptions: {//订阅 监听作用，相当于watch

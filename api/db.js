@@ -2,19 +2,20 @@ const Mock=require('mockjs')
 const Random=Mock.Random
 
 module.exports=function(){
-  const data={users:[]}
+  const data={users:[],news:[],login:{}}
   const names=[1,2,3,4].map((item)=>Random.cname(item,item+1))
   for(let i=0,len=5;i<len;i++){
     let name=names[Random.integer(1,3)]
     data.users.push({
       id:i,
       name:name,
+      password:111,
       email:Random.email(),
       website:Random.url()
     })
   }
 
-  for (var i = 0; i < 10; i++) {
+  /*for (var i = 0; i < 10; i++) {
     var content = Random.cparagraph(0,10);
     data.news.push({
       id: i,
@@ -24,6 +25,7 @@ module.exports=function(){
       views: Random.integer(100,5000),
       images: images.slice(0,Random.integer(1,3))
     })
-  }
+  }*/
+
   return data
 }

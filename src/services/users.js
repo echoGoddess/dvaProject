@@ -26,6 +26,3 @@
     })
  }
 
- export function requestMock(){
-   return request('/api/mock',{method:'GET'})
- }
