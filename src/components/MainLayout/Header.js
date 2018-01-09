@@ -20,6 +20,9 @@ function Header({location}){
     <Menu.Item key="/antd">
       <a href="https://github.com/dvajs/dva" target="_blank"></a>
     </Menu.Item>
+    <Menu.Item key="/search">
+      <Link to="/search"><Icon type="search">Search</Icon></Link>
+    </Menu.Item>
   </Menu>)
 
 }

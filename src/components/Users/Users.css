@@ -1,9 +1,12 @@
+.normal{
 
-.normal {
 }
 .create{
   margin-bottom: 1.5em;
 }
 .operation a{
   margin:0 .5em;
+}
+.normal .ant-btn-primary{
+  color:red!important;
 }

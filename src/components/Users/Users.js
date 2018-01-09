@@ -72,17 +72,15 @@ function Users({dispatch,list:dataSource,loading,total,page:current}) {
         />
       </div>
       <Pagination
-        className="ant-table-pagination"
         total={total}
         current={current}
         pageSize={PAGE_SIZE}
-      onChange={handlePageSize}/>
+        onChange={handlePageSize}/>
     </div>
   );
 }
 
 function mapStateToProps(state){
-  console.log('state',state)
   const {list,total,page}=state.users
   return {list,total,page,loading: state.loading.models.users}
 }

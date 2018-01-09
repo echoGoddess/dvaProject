@@ -1,0 +1,14 @@
+
+.normal {
+  margin:50px 200px;
+}
+.enter{
+  display: inline-block;
+  width: 40%;
+  margin-bottom:20px;
+  margin-right:10px;
+}
+.pagination{
+  float:right;
+  margin-top:20px;
+}
